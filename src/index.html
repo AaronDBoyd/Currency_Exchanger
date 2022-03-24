@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  
-  <title></title>
+  <title>Currency Exchanger</title>
 </head>
 <body>
   <div class="container">
-  
-
-
-
-
-
-
-
-
-
-
+    <h1>Exchange your currency for US Dollars</h1>
+    <label for="amount">Enter the amount of dollors to exchange:</label>  
+    <input id="amount" type="text">
+    <label for="currency">Choose the currency you wish to exchange to:</label>
+    <select id="currency">
+      <option value="BBD">Barbados Dollar</option>
+      <option value="CAD">Canadian Dollar</option>
+      <option value="MXN">Mexican Peso</option>
+      <option value="NZD">New Zealand Dollar</option>
+      <option value="EUR">Euro</option>
+      <option value="AUD">Australian Dollar</option>
+    </select>
+    <button class="btn-dark" id="submitExchange">Show Exchange Rate</button>
+    <div class="showRates"></div>
+    <div class="showErrors"></div>
   </div>
 </body>
 </html>
