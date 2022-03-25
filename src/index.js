@@ -13,8 +13,8 @@ function clearFields() {
 
 function getElements(response) {
   if(response) {
-    const conversion = (response.conversion_rate * dollars);
-    
+    const conversion = (response.conversion_result);
+    const dollars = (response.target_code);
     $('.showRates').append(`Your chosen amount of USD is worth ${conversion} in ${dollars}.`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
