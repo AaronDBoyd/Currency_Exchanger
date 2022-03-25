@@ -6,7 +6,6 @@ import ExchangeService from './services/exchange-service.js';
 
 function clearFields() {
   $('#amount').val("");
-  $('#currency').val("");
   $('.showRates').text("");
   $('.showErrors').text("");
 }
@@ -15,7 +14,8 @@ function getElements(response) {
   if(response) {
     const conversion = (response.conversion_result);
     const dollars = (response.target_code);
-    $('.showRates').append(`Your chosen amount of USD is worth ${conversion} in ${dollars}.`);
+    const base = (response.base_code);
+    $('.showRates').append(`Your chosen amount of ${base} is worth ${conversion} in ${dollars}.`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
@@ -24,9 +24,10 @@ function getElements(response) {
 $(document).ready(function() {
   $('#submitExchange').click(function() {
     const amount = $('#amount').val();
-    const currency = $('#currency').val();
+    const currencyFrom = $('#currencyFrom').val();
+    const currencyTo = $('#currencyTo').val();
     clearFields();
-    ExchangeService.getCurrency(currency, amount)
+    ExchangeService.getCurrency(currencyFrom, currencyTo, amount)
     .then(function(response) {
       getElements(response);
     });
