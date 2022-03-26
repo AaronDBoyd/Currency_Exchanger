@@ -5,32 +5,41 @@
 </head>
 <body>
   <div class="container">
+    <div>
     <h1>Get exchange rates for different currencies.</h1>
-    <label for="currencyFrom">Choose the currency you wish to exchange from:</label>
-    <select id="currencyFrom">
-      <option value="USD">United States Dollar</option>
-      <option value="BBD">Barbados Dollar</option>
-      <option value="CAD">Canadian Dollar</option>
-      <option value="MXN">Mexican Peso</option>
-      <option value="NZD">New Zealand Dollar</option>
-      <option value="EUR">Euro</option>
-      <option value="AUD">Australian Dollar</option>
-      <option value="JPY">Japanese Yen</option>
+    
+    <select id="currencyFrom" class="form-select form-select-lg mb-3 oblique" aria-label=".form-select-lg">
+      <option selected>-Choose the currency you wish to exchange from-</option>
+      <option value="USD">United States Dollar - USD</option>
+      <option value="BBD">Barbados Dollar - BBD</option>
+      <option value="CAD">Canadian Dollar - CAD</option>
+      <option value="MXN">Mexican Peso - MXN</option>
+      <option value="NZD">New Zealand Dollar - NZD</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="AUD">Australian Dollar - AUD</option>
+      <option value="JPY">Japanese Yen - JPY</option>
     </select>
-    <label for="amount">Enter the amount of dollors to exchange:</label>  
-    <input id="amount" type="text">
-    <label for="currencyTo">Choose the currency you wish to exchange to:</label>
-    <select id="currencyTo">
-      <option value="BBD">Barbados Dollar</option>
-      <option value="CAD">Canadian Dollar</option>
-      <option value="MXN">Mexican Peso</option>
-      <option value="NZD">New Zealand Dollar</option>
-      <option value="EUR">Euro</option>
-      <option value="AUD">Australian Dollar</option>
-      <option value="JPY">Japanese Yen</option>
-      <option value="USD">United States Dollar</option>
+    </div>
+    <div>
+    <select id="currencyTo" class="form-select form-select-lg mb-3 oblique" aria-label=".form-select-lg">
+      <option selected>-Choose the currency you wish to exchange to-</option>
+      <option value="BBD">Barbados Dollar - BBD</option>
+      <option value="CAD">Canadian Dollar - CAD</option>
+      <option value="MXN">Mexican Peso - MXN</option>
+      <option value="NZD">New Zealand Dollar - NZD</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="AUD">Australian Dollar - AUD</option>
+      <option value="JPY">Japanese Yen - JPY</option>
+      <option value="USD">United States Dollar - USD</option>
     </select>
-    <button class="btn-dark" id="submitExchange">Show Exchange Rate</button>
+    </div>
+    <div class="form-floating mb-3">
+    <input type="text" id="amount" class="form-control"> 
+    <label for="amount"><strong>Enter the amount of money to exchange:</strong></label>
+    </div>
+    <div>
+    <button class="btn-dark oblique" id="submitExchange">Show Exchange Rate</button>
+    </div>
     <div class="showRates"></div>
     <div class="showErrors"></div>
   </div>
